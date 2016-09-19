@@ -43,14 +43,18 @@ bool brgCardStatus [ 12 ] [ 4 ] = { true } ;
 
 int main ()
 {
-	IntializeLinkedList ( pDeckHead , pDeckTail ) ;
-	IntializeLinkedList ( pAHandHead , pAHandTail ) ;
-	IntializeLinkedList ( pBHandHead , pBHandTail ) ;
-	IntializeLinkedList ( pCHandHead , pCHandTail ) ;
-	IntializeLinkedList ( pAGetHead , pAGetTail ) ;
-	IntializeLinkedList ( pBGetHead , pBGetTail ) ;
-	IntializeLinkedList ( pCGetHead , pCGetTail ) ;
-	IntializeLinkedList ( pFieldHead , pFieldTail ) ;
+	UserState User ;
+
+
+	InitializeLinkedList ( pDeckHead , pDeckTail ) ;
+	InitializeLinkedList ( pAHandHead , pAHandTail ) ;
+	InitializeLinkedList ( pBHandHead , pBHandTail ) ;
+	InitializeLinkedList ( pCHandHead , pCHandTail ) ;
+	InitializeLinkedList ( pAGetHead , pAGetTail ) ;
+	InitializeLinkedList ( pBGetHead , pBGetTail ) ;
+	InitializeLinkedList ( pCGetHead , pCGetTail ) ;
+	InitializeLinkedList ( pFieldHead , pFieldTail ) ;
+	InitializeUserState ( & User ) ;
 
 	CardShuffle ( irgList , pDeckTail ) ;
 

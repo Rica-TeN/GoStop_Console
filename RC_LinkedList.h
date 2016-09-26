@@ -33,15 +33,15 @@ typedef struct RC_LinkedList
  */
 typedef struct UserState
 {
-	int iPlayerTurn ;
-	int iAPiCount ;
-	int iBPiCount ;
-	int iCPiCount ;
-	int iGoCount ;
-	int iShakeCount ;
-	int iBBukCount ;
-	int iGwangCount ;
-	int iMungCount ;
+	int m_iPlayerTurn ;
+	int m_iAPiCount ;
+	int m_iBPiCount ;
+	int m_iCPiCount ;
+	int m_iGoCount ;
+	int m_iShakeCount ;
+	int m_iBBukCount ;
+	int m_iGwangCount ;
+	int m_iMungCount ;
 } UserState ;
 
 

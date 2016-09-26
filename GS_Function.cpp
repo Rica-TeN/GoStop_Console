@@ -22,15 +22,15 @@ void InitializeLinkedList ( RC_LinkedList * pHead , RC_LinkedList * pTail )
  */
 void InitializeUserState ( UserState * pUser )
 {
-	pUser -> iPlayerTurn = 1 ;
-	pUser -> iAPiCount = 0 ;
-	pUser -> iBPiCount = 0 ;
-	pUser -> iCPiCount = 0 ;
-	pUser -> iGoCount = 0 ;
-	pUser -> iShakeCount = 0 ;
-	pUser -> iBBukCount = 0 ;
-	pUser -> iGwangCount = 0 ;
-	pUser -> iMungCount = 0 ;
+	pUser -> m_iPlayerTurn = 1 ;
+	pUser -> m_iAPiCount = 0 ;
+	pUser -> m_iBPiCount = 0 ;
+	pUser -> m_iCPiCount = 0 ;
+	pUser -> m_iGoCount = 0 ;
+	pUser -> m_iShakeCount = 0 ;
+	pUser -> m_iBBukCount = 0 ;
+	pUser -> m_iGwangCount = 0 ;
+	pUser -> m_iMungCount = 0 ;
 }
 
 
@@ -290,26 +290,26 @@ void RenderUserState ( RC_LinkedList * pHandHead , RC_LinkedList * pGetHead , Us
 	int iShake = 0 ;
 
 
-	if ( iPlayer == ( pUser -> iPlayerTurn ) )
+	if ( iPlayer == ( pUser -> m_iPlayerTurn ) )
 		printf ( "*" ) ;
 
 	if ( 1 == iPlayer )
 	{
 		printf ( "A" ) ;
-		iGo = ( pUser -> iGoCount ) / 100 ;
-		iShake = ( pUser -> iShakeCount ) / 100 ;
+		iGo = ( pUser -> m_iGoCount ) / 100 ;
+		iShake = ( pUser -> m_iShakeCount ) / 100 ;
 	}
 	else if ( 2 == iPlayer )
 	{
 		printf ( "B" ) ;
-		iGo = ( pUser -> iGoCount ) % 100 / 10 ;
-		iShake = ( pUser -> iShakeCount ) % 100 / 10 ;
+		iGo = ( pUser -> m_iGoCount ) % 100 / 10 ;
+		iShake = ( pUser -> m_iShakeCount ) % 100 / 10 ;
 	}
 	else
 	{
 		printf ( "C" ) ;
-		iGo = ( pUser -> iGoCount ) % 10 ;
-		iShake = ( pUser -> iShakeCount ) % 10 ;
+		iGo = ( pUser -> m_iGoCount ) % 10 ;
+		iShake = ( pUser -> m_iShakeCount ) % 10 ;
 	}
 
 
@@ -375,17 +375,17 @@ void RenderUserState ( RC_LinkedList * pHandHead , RC_LinkedList * pGetHead , Us
 	{
 		default :
 		case 1 :
-			if ( iPlayer == ( pUser -> iPlayerTurn ) )
+			if ( iPlayer == ( pUser -> m_iPlayerTurn ) )
 				printf ( "*" ) ;
 
 			printf ( "A") ;
 
-			if ( ( pUser -> iGoCount ) / 100 )
-				printf ( "%d°í\t" , ( pUser -> iGoCount ) / 100 ) ;
+			if ( ( pUser -> m_iGoCount ) / 100 )
+				printf ( "%d°í\t" , ( pUser -> m_iGoCount ) / 100 ) ;
 			else
 				printf ( "\t" ) ;
-			if ( ( pUser -> iShakeCount ) / 100 )
-				printf ( "%d¹ø Èçµê\t" , ( pUser -> iGoCount ) / 100 ) ;
+			if ( ( pUser -> m_iShakeCount ) / 100 )
+				printf ( "%d¹ø Èçµê\t" , ( pUser -> m_iGoCount ) / 100 ) ;
 			else
 				printf ( "\t" ) ;
 
@@ -575,33 +575,33 @@ int iScoreReturn ( RC_LinkedList * pGetHead , UserState * pUser , int iPlayer )
 	if ( 1 == iPlayer )
 	{
 		if ( 6 <= iPi )
-			pUser -> iAPiCount = 6 ;
+			pUser -> m_iAPiCount = 6 ;
 		else
-			pUser -> iAPiCount = iPi ;
+			pUser -> m_iAPiCount = iPi ;
 
-		pUser -> iGwangCount = iGwang % 10 ;
-		pUser -> iMungCount = iMung % 10 ;
+		pUser -> m_iGwangCount = iGwang % 10 ;
+		pUser -> m_iMungCount = iMung % 10 ;
 			
 	}
 	else if ( 2 == iPlayer )
 	{
 		if ( 6 <= iPi )
-			pUser -> iAPiCount = 6 ;
+			pUser -> m_iAPiCount = 6 ;
 		else
-			pUser -> iAPiCount = iPi ;
+			pUser -> m_iAPiCount = iPi ;
 
-		pUser -> iGwangCount = iGwang % 10 ;
-		pUser -> iMungCount = iMung % 10 ;
+		pUser -> m_iGwangCount = iGwang % 10 ;
+		pUser -> m_iMungCount = iMung % 10 ;
 	}
 	else
 	{
 		if ( 6 <= iPi )
-			pUser -> iAPiCount = 6 ;
+			pUser -> m_iAPiCount = 6 ;
 		else
-			pUser -> iAPiCount = iPi ;
+			pUser -> m_iAPiCount = iPi ;
 
-		pUser -> iGwangCount = iGwang % 10 ;
-		pUser -> iMungCount = iMung % 10 ;
+		pUser -> m_iGwangCount = iGwang % 10 ;
+		pUser -> m_iMungCount = iMung % 10 ;
 	}
 
 
